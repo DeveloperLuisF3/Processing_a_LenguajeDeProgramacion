@@ -65,7 +65,7 @@ Hay expresiones que también pueden usarse en comparación de un valor con otro.
 |6 > 3|true|
 |54 < 50|false|
 
-Un conjunto de expresiones pueden formar una acción, lo que en programación equivale a una oración. Se completa cuando se presenta el terminador de la acción. En Processing, el terminador de acción es el punto y coma (**,**). Al igual que hay diversos tipos de oraciones, hay diversos tipos de acciones. Una acción puede definir una variable, ejecutar una variable, asignar una variable, ejecutar una función, o construir un objeto. A continuación unos ejemplos:
+Un conjunto de expresiones pueden formar una acción, lo que en programación equivale a una oración. Se completa cuando se presenta el terminador de la acción. En Processing, el terminador de acción es el punto y coma (**;**). Al igual que hay diversos tipos de oraciones, hay diversos tipos de acciones. Una acción puede definir una variable, ejecutar una variable, asignar una variable, ejecutar una función, o construir un objeto. A continuación unos ejemplos:
 
 ```processing
     size (200, 200);    // ejecuta la función size y determina los valores 200 y 200
@@ -75,3 +75,59 @@ Un conjunto de expresiones pueden formar una acción, lo que en programación eq
 ```
 
 Si se elimina el punto y coma, el programa daría un error.
+
+## Sensibilidad
+
+En nuestra lengua, hay casos en los que las palabras comienzan en mayúsculas y casos en los que no. Es a lo que se llama *letra capital*. Por ejemplo, nombres de lugares como Buenos Aires o Andalucía, o nombres propios como Pablo o Enrique, todos ellos comienzan con la letra capital (primera letra en mayúsculas). Hay diversos lenguajes de programación que son permisivos con esto y suelen dejarlo pasar. En el caso de Processing, se produce una **diferenciación** entre mayúsculas y minúsculas, siendo que la correcta forma de escritura es en **minúsculas**. Escribir Size() produciría un error.
+
+```processing
+    size (200, 200);
+    Background (102);   // ERROR - La B en "background" está como letra capital.
+```
+
+## Espacios en blanco
+
+Existe una gran variedad de lenguajes de programación que son escritos en cuanto a los espacios en blanco que se dejan entre cada estructura. Sin embargo, Processing se presta para esto y le **resta** importancia.
+
+Podemos tener el siguiente código:
+
+```processing
+    size (200, 200);
+    background (102);
+```
+
+Y escrito de la siguiente manera funcionará exactamente **igual**:
+
+```processing
+    sice
+    (200                    ,
+                        200                 );
+    background                  (                       102             )
+                    ;
+```
+
+## Consola
+
+Cuando un programa es ejecutado, la computadora realiza acciones a tal velocidad que es imposible percibirlas para el ojo humano. Por lo tanto, es importante mirar la consola, no solo para errores, sino también para entender pue ocurre **detrás** del programa. 
+
+La consola en Processing, se encuentra como un espacio en negro debajo del editor de texto. Como es muy importante entender que ocurre dentro del programa, existen las funciones print() y println(). Estas funciones no envían páginas a imprimir, ni muestran nada en la ventana de representación. Simplemente muestran texto en la consola. La consola puede ser usada para mostrar una variable, confirmar un evento o chequear datos externos que están ingresando. Al igual que los comentarios, print() y println() pueden hacer más clara la lectura del código.
+
+```processing
+    // Si se desea imprimir texto, este debe estar entre comillas
+    println ("Processing...");      // Imprime "Processing..." en la consola
+
+    // Si se desea imprimir una variable
+    // no debe ponerse su nombre entre comillas
+    int  x = 20;
+    println (x);        // Imprime "20" en la consola
+
+    // Mientras println() escribe cada cosa en una sola linea, print() escribe todo en la misma línea
+    print (20);
+    println (30);       // Imprime "2032" en la consola
+    println (80);       // Imprime "80" en una nueva línea de la consola
+
+    // También pueden concatenarse múltiples textos con el operador "+" (no confundir con su uso matemático)
+    int x = 20; 
+    int y =80;
+    println (x + " : " + y);        // Imprime "20 : 80" en la consola
+```
