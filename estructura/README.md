@@ -132,4 +132,4 @@ La consola en Processing, se encuentra como un espacio en negro debajo del edito
     println (x + " : " + y);        // Imprime "20 : 80" en la consola
 ```
 
-[Consola_video](../consola.mov "consola_Processing")
+[Consola_video](../vid/consola.mov "consola_Processing")
